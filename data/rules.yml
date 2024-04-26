@@ -1,0 +1,28 @@
+version: "3.1"
+
+rules:
+
+- rule: decir chau siempre despues que se despidan
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Decir 'Soy un bot' siempre que el usuario me haga un challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Cuando saludo, agarro mi nombre
+  conversation_start: true
+  steps:
+  - intent: greet
+  - action: action_get_name 
+  - action: utter_greet
+
+- rule: si sabes mi nombre decimelo
+  steps:
+  - intent: averigua mi nombre
+  - action: action_get_name
+
+
+

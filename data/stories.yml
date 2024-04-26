@@ -1,0 +1,238 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: mood_great 
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: mood_unhappy 
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm  
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: mood_unhappy  
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny 
+  - action: utter_goodbye
+
+- story: quiere viajar
+  steps:
+  - intent: viaje
+  - action: utter_viaje
+
+
+- story: quiero comprar solo hotel
+  steps:
+  - intent: quiero hotel 
+  - action: action_listar_hoteles
+  - intent: opcion
+    entities:
+    - opcion: '1'
+  - slot_was_set:
+    - opcion: '1'
+  - action: action_elegir_opcion_hotel
+  - action: action_erase_slots
+
+
+- story: pregunta donde hay algo 
+  steps:
+  - intent: donde hay
+  - action: action_atraccion_en
+
+- story: pregunta que hay en una ciudad
+  steps:
+  - intent: que hay en la ciudad
+  - action: action_atraccion_de_ciudad
+
+- story: quiero viajar pero no se a donde
+  steps:
+  - intent: viaje
+  - action: utter_viaje
+  - intent: listar ciudades
+  - action: action_listar_ciudades
+
+- story: pregunta por las ciudades de un pais
+  steps:
+  - intent: consulta ciudades de un pais
+    entities:
+    - atraccion: ciudad
+    - pais: Argentina
+  - slot_was_set:
+    - slot_pais: Argentina
+  - slot_was_set:
+    - slot_atraccion: ciudad
+  - action: action_ciudades_de_pais
+
+- story: Hilo principal con hotel
+  steps:
+  - intent: viaje
+  - action: utter_viaje
+  - intent: ciudades
+    entities:
+    - ciudad: Miami
+    - ciudad: Cancun
+    - city: Miami
+    - city: Cancun
+  - slot_was_set:
+    - departure: Cancun
+  - slot_was_set:
+    - destination: Miami
+  - slot_was_set:
+    - slot_ciudad: Cancun
+  - action: utter_fecha
+  - intent: intervalo dias
+    entities:
+    - dates: 10/10/2023
+    - dates: 15/10/2023
+  - slot_was_set:
+    - inicio: 10/10/2023
+  - slot_was_set:
+    - fin: 15/10/2023
+  - action: action_buscar_vuelo
+  - slot_was_set:
+    - opcion1: 'Vuelo desde Cancun hasta Miami el día 10/10/2023 a las 6:00 horas con vuelo de vuelta desde Miami hasta Cancun el día 15/10/2023 a las 18:30 horas. Valor: $1191'
+  - slot_was_set:
+    - opcion2: 'Vuelo desde Cancun hasta Miami el día 10/10/2023 a las 18:30 horas con vuelo de vuelta desde Miami hasta Cancun el día 15/10/2023 a las 6:00 horas. Valor: $758'
+  - slot_was_set:
+    - opcion3: 'Vuelo desde Cancun hasta Miami el día 10/10/2023 a las 10:00 horas con vuelo de vuelta desde Miami hasta Cancun el día 15/10/2023 a las 18:00 horas. Valor: $2704'
+  - slot_was_set:
+    - hayopcion: true
+  - intent: opcion
+    entities:
+    - opcion: '1'
+  - slot_was_set:
+    - opcion: '1'
+  - action: action_elegir_opcion
+  - intent: affirm
+  - action: action_listar_hoteles
+  - slot_was_set:
+    - hotel1: Hotel Melia por $375 la noche
+  - slot_was_set:
+    - hotel2: Hotel Jin Jiang por $203 la noche
+  - slot_was_set:
+    - hotel3: Hotel Accor por $413 la noche
+  - intent: opcion
+    entities:
+    - opcion: '2'
+  - slot_was_set:
+    - opcion: '2'
+  - action: action_elegir_opcion_hotel
+  - action: action_erase_slots
+
+- story: Hilo principal sin hotel
+  steps:
+  - intent: viaje
+  - action: utter_viaje
+  - intent: ciudades
+    entities:
+    - ciudad: Miami
+    - ciudad: Cancun
+    - city: Miami
+    - city: Cancun
+  - slot_was_set:
+    - departure: Cancun
+  - slot_was_set:
+    - destination: Miami
+  - slot_was_set:
+    - slot_ciudad: Cancun
+  - action: utter_fecha
+  - intent: intervalo dias
+    entities:
+    - dates: 10/10/2023
+    - dates: 15/10/2023
+  - slot_was_set:
+    - inicio: 10/10/2023
+  - slot_was_set:
+    - fin: 15/10/2023
+  - action: action_buscar_vuelo
+  - slot_was_set:
+    - opcion1: 'Vuelo desde Cancun hasta Miami el día 10/10/2023 a las 6:00 horas con vuelo de vuelta desde Miami hasta Cancun el día 15/10/2023 a las 18:30 horas. Valor: $1191'
+  - slot_was_set:
+    - opcion2: 'Vuelo desde Cancun hasta Miami el día 10/10/2023 a las 18:30 horas con vuelo de vuelta desde Miami hasta Cancun el día 15/10/2023 a las 6:00 horas. Valor: $758'
+  - slot_was_set:
+    - opcion3: 'Vuelo desde Cancun hasta Miami el día 10/10/2023 a las 10:00 horas con vuelo de vuelta desde Miami hasta Cancun el día 15/10/2023 a las 18:00 horas. Valor: $2704'
+  - slot_was_set:
+    - hayopcion: true
+  - intent: opcion
+    entities:
+    - opcion: '1'
+  - slot_was_set:
+    - opcion: '1'
+  - action: action_elegir_opcion
+  - intent: deny
+  - action: utter_compro
+  - action: action_erase_slots
+
+- story: Comprar paquete
+  steps:
+  - intent: busco paquete
+  - action: action_recomendar_paquetes
+  - slot_was_set:
+    - paquete: 'Nombre: Sur argentino, Destinos: Bariloche, Calafate, Ushuaia,desde el 24/02/2024 hasta el dia 17/07/2024 por el valor de $6371'
+  - intent: affirm
+  - action: action_comprar_paquete
+  - slot_was_set:
+    - paquete: None
+
+- story: Comprar paquete no compro
+  steps:
+  - intent: busco paquete
+  - action: action_recomendar_paquetes
+  - intent: deny
+  - action: utter_no_compro
+
+
+- story: ofreci paquete sesion start
+  steps:
+  - slot_was_set:
+    - paquete: 'Nombre: Sur argentino, Destinos: Bariloche, Calafate, Ushuaia,desde el 24/02/2024 hasta el dia 17/07/2024 por el valor de $6371'
+  - intent: affirm
+  - action: action_comprar_paquete
+  - slot_was_set:
+    - paquete: None
+
+- story: ofreci paquete sesion start no compro
+  steps:
+  - slot_was_set:
+    - paquete: 'Nombre: Sur argentino, Destinos: Bariloche, Calafate, Ushuaia,desde el 24/02/2024 hasta el dia 17/07/2024 por el valor de $6371'
+  - intent: deny
+  - action: utter_no_compro
+
+
+
+- story: gusto sesion start
+  steps:
+  - or: 
+    - intent: gustoviaje
+    - intent: affirm
+  - action: action_save_preferences
+
+- story: gusto sesion start
+  steps:
+  - or: 
+    - intent: nomegusto
+    - intent: deny
+  - action: action_save_preferences
+
+
+- story: recomendame UN DESTINO
+  steps:
+  - intent: recomenda destino
+  - action: action_recomendar_destino
+  - intent: affirm
+  - action: action_comprar_recomendacion
+
+- story: recomendame UN DESTINO no compro
+  steps:
+  - intent: recomenda destino
+  - action: action_recomendar_destino
+  - intent: deny
+  - action: utter_no_compro

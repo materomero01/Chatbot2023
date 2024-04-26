@@ -1,0 +1,21 @@
+BOT DE TURISMO
+Un bot cone el cual charlamos para buscar un paquete de viaje.
+El bot puede iniciar una conversacion proponiendo un paquete.
+y charlar sobre los resultados del paquete comprado, cuando piensa 
+volver a viajar, etc.
+
+
+
+
+Luego:
+armar un txt por cada nombre   //ver
+nombre= nombre de telegram
+destinos favoritos (mas se repiten)  //necesito el txt
+calcular cada cuanto viaja           //ver si puedo
+calcular cuanto paga por los viajes  //ver si puedo
+
+
+MODIFICAR SESION START: 
+ utter 	"te gusto el viaje a ..."
+	"volverias a ir a"
+

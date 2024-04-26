@@ -1,0 +1,43 @@
+Mi experiencia en mi último viaje fue maravillosa. 
+Fue una aventura inolvidable.
+
+
+LISTAR CIUDADES X 
+listame todas las ciudades
+
+BUSCAR PAQUETE X 
+recomendame un paquete
+
+CIUDADES DE UN PAIS X 
+que ciudades hay en Argentina
+
+DONDE HAY (atraccion) X 
+donde hay montaña
+
+ATRACCION EN CIUDAD  X
+por que es conocido Cancun
+
+VIAJE X
+quiero irme de vacaciones
+
+MOSTRAR HOTELES X
+mostrame los hoteles disponibles
+
+OPCION PARA HOTELES X
+me gusta la opcion numero 2
+
+FALLBACK X
+
+INTERVALO DIAS X
+
+OPCION PARA VUELOS X
+
+CIUDADES X
+
+
+
+
+
+
+
+

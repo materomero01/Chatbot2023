@@ -1,0 +1,13 @@
+8169;Grecia;ciudad;Atenas;19/07/2024;22/07/2023
+8169;Alemania;ciudad;Berlin;19/07/2024;22/07/2023
+8169;Italia;ciudad;Venecia;19/07/2024;22/07/2023
+3702.5;Estados Unidos;playa;Miami;02/01/2024;04/05/2023
+3702.5;Estados Unidos;ciudad;Orlando;02/01/2024;04/05/2023
+1168;Estados Unidos;playa;Miami;10/10/2023;20/01/2023
+5139.0;Argentina;playa;Necochea;13/03/2024;11/08/2024
+1370;Italia;ciudad;Milan;18/10/2023;02/11/2023
+1251;Alemania;ciudad;Frankfurt;18/10/2023;02/11/2023
+736;Polonia;ciudad;Cracovia;18/10/2023;02/11/2023
+2835.3333333333335;China;ciudad;Beijing;07/11/2024;10/11/2024
+4693.5;Estados Unidos;playa;Miami;16/03/2024;29/04/2024
+4693.5;Estados Unidos;ciudad;Orlando;16/03/2024;29/04/2024

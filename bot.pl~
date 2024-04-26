@@ -1,0 +1,225 @@
+city('Hong Kong').
+city('Bangkok').
+city('Londres').
+city('Singapur').
+city('Paris').
+city('Dubai').
+city('Nueva York').
+city('Estambul').
+city('Roma').
+city('Tokio').
+city('Miami').
+city('Milan').
+city('Las Vegas').
+city('Barcelona').
+city('Shanghai').
+city('Amsterdam').
+city('Viena').
+city('Los Angeles').
+city('Venecia').
+city('Orlando').
+city('Berlin').
+city('Florencia').
+city('Johannesburgo').
+city('Madrid').
+city('Dublin').
+city('Moscu').
+city('Beijing').
+city('Atenas').
+city('Budapest').
+city('Cancun').
+city('San Francisco').
+city('Toronto').
+city('Munich').
+city('Punta Cana').
+city('Sydney').
+city('Bruselas').
+city('Santiago').
+city('Doha').
+city('Lisboa').
+city('El Cairo').
+city('San Petersburgo').
+city('Cracovia').
+city('Lima').
+city('Auckland').
+city('Honolulu').
+city('Ciudad de Mexico').
+city('Vancouver').
+city('Buenos Aires').
+city('Melbourne').
+city('Niza').
+city('Bariloche').
+city('Salta').
+city('Jujuy').
+city('Calafate').
+city('Cataratas del Iguazu').
+city('Ushuaia').
+city('Necochea').
+city('Frankfurt').
+city('Washington DC').
+city('Abu Dhabi').
+
+pais('China','Hong Kong').
+pais('Tailandia','Bangkok').
+pais('Inglaterra','Londres').
+pais('Singapur','Singapur').
+pais('Francia','Paris').
+pais('Emiratos Arabes Unidos','Dubai').
+pais('Estados Unidos','Nueva York').
+pais('Turquia','Estambul').
+pais('Italia','Roma').
+pais('Japon','Tokio').
+pais('Estados Unidos','Miami').
+pais('Italia','Milan').
+pais('Estados Unidos','Las Vegas').
+pais('Espana','Barcelona').
+pais('China','Shanghai').
+pais('Paises Bajos','Amsterdam').
+pais('Austria','Viena').
+pais('Estados Unidos','Los Angeles').
+pais('Italia','Venecia').
+pais('Estados Unidos','Orlando').
+pais('Alemania','Berlin').
+pais('Italia','Florencia').
+pais('Sudafrica','Johannesburgo').
+pais('Espana','Madrid').
+pais('Irlanda','Dublin').
+pais('Rusia','Moscu').
+pais('China','Beijing').
+pais('Grecia','Atenas').
+pais('Hungria','Budapest').
+pais('Mexico','Cancun').
+pais('Estados Unidos','San Francisco').
+pais('Canada','Toronto').
+pais('Alemania','Munich').
+pais('Republica Dominicana','Punta Cana').
+pais('Australia','Sydney').
+pais('Belgica','Bruselas').
+pais('Chile','Santiago').
+pais('Qatar','Doha').
+pais('Portugal','Lisboa').
+pais('Egipto','El Cairo').
+pais('Rusia','San Petersburgo').
+pais('Polonia','Cracovia').
+pais('Peru','Lima').
+pais('Nueva Zelanda','Auckland').
+pais('Estados Unidos','Honolulu').
+pais('Mexico','Ciudad de Mexico').
+pais('Canada','Vancouver').
+pais('Argentina','Buenos Aires').
+pais('Australia','Melbourne').
+pais('Francia','Niza').
+pais('Alemania','Frankfurt').
+pais('Estados Unidos','Washington DC').
+pais('Emiratos Arabes Unidos','Abu Dhabi').
+pais('Argentina','Bariloche').
+pais('Argentina','Salta').
+pais('Argentina','Jujuy').
+pais('Argentina','Calafate').
+pais('Argentina','Peninsula de Valdes').
+pais('Argentina','Ushuaia').
+pais('Argentina','Necochea').
+tiene('Hong Kong', 'ciudad').
+tiene('Bangkok', 'ciudad').
+tiene('Londres', 'ciudad').
+tiene('Singapur', 'ciudad').
+tiene('Singapur', 'playa').
+tiene('Paris', 'ciudad').
+tiene('Dubai', 'playa').
+tiene('Dubai', 'ciudad').
+tiene('Nueva York', 'ciudad').
+tiene('Estambul', 'ciudad').
+tiene('Roma', 'ciudad').
+tiene('Tokio', 'ciudad').
+tiene('Miami', 'playa').
+tiene('Miami', 'ciudad').
+tiene('Milan', 'ciudad').
+tiene('Las Vegas', 'ciudad').
+tiene('Barcelona', 'ciudad').
+tiene('Shanghai', 'ciudad').
+tiene('Amsterdam', 'ciudad').
+tiene('Viena', 'ciudad').
+tiene('Los Angeles', 'playa').
+tiene('Los Angeles', 'ciudad').
+tiene('Venecia', 'ciudad').
+tiene('Orlando', 'ciudad').
+tiene('Berlin', 'ciudad').
+tiene('Florencia', 'ciudad').
+tiene('Johannesburgo', 'ciudad').
+tiene('Madrid', 'ciudad').
+tiene('Dublin', 'ciudad').
+tiene('Moscu', 'ciudad').
+tiene('Beijing', 'ciudad').
+tiene('Atenas', 'ciudad').
+tiene('Budapest', 'ciudad').
+tiene('Cancun', 'playa').
+tiene('Cancun', 'ciudad').
+tiene('San Francisco', 'ciudad').
+tiene('Toronto', 'ciudad').
+tiene('Munich', 'ciudad').
+tiene('Punta Cana', 'playa').
+tiene('Sydney', 'ciudad').
+tiene('Sydney', 'playa').
+tiene('Bruselas', 'ciudad').
+tiene('Santiago', 'ciudad').
+tiene('Doha', 'ciudad').
+tiene('Lisboa', 'playa').
+tiene('Lisboa', 'ciudad').
+tiene('El Cairo', 'ciudad').
+tiene('San Petersburgo', 'ciudad').
+tiene('Cracovia', 'ciudad').
+tiene('Lima', 'playa').
+tiene('Lima', 'ciudad').
+tiene('Auckland', 'ciudad').
+tiene('Honolulu', 'playa').
+tiene('Ciudad de Mexico', 'ciudad').
+tiene('Vancouver', 'ciudad').
+tiene('Buenos Aires', 'ciudad').
+tiene('Melbourne', 'ciudad').
+tiene('Niza', 'playa').
+tiene('Frankfurt', 'ciudad').
+tiene('Washington DC', 'ciudad').
+tiene('Abu Dhabi', 'playa').
+tiene('Bariloche', 'montania').
+tiene('Salta', 'montania').
+tiene('Jujuy', 'montania').
+tiene('Calafate', 'montania').
+tiene('Cataratas del Iguazu', 'ciudad').
+tiene('Ushuaia', 'montania').
+tiene('Necochea', 'playa').
+
+atraccion('playa').
+atraccion('montania').
+atraccion('ciudad').
+
+esta_en(Atraccion, Ciudad) :- tiene(Ciudad, Atraccion).
+
+mostrar_city(Cities) :-
+    findall(City, city(City),Cities).
+
+ciudad_pais(Pais, Ciudades) :-
+     findall(Ciudad, pais(Pais, Ciudad),Ciudades).
+
+tiene_ciudad(Atraccion, Ciudades) :-
+     findall(Ciudades, esta_en(Atraccion, Ciudad),Ciudades).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

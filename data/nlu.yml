@@ -1,0 +1,446 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - que onda amigo
+    - wachin
+    - amigo
+    - ola
+    - mornin
+    - buen dia
+    - buenas noches
+    - buenas tardes
+    - buenas buenas
+    - che
+    - hola
+    - brotherr
+- intent: goodbye
+  examples: |
+    - nos vemos
+    - hasta mañana
+    - que tengas un buen dia
+    - hasta la proxima
+    - hasta luego
+    - chauchis
+    - adios
+- intent: que hay en la ciudad
+  examples: |
+    - Que atractivo hay en [Berlin](ciudad)
+    - decime que atraccion hay en [Necochea](ciudad)
+    - mostrame que atracción turística existe en [Singapur](ciudad)
+    - Cual es la principal atracción en [Nueva York](ciudad)?
+    - Que lugar de interes se encuentra en [Roma](ciudad)?
+    - Dime acerca de las atracciones en [Dubai](ciudad)
+    - Cual es la mayor atracción en [Barcelona](ciudad)?
+    - mostrame que hay en [Miami](ciudad)
+    - enseñame que atractivo tiene [Cancun](ciudad)
+    - por que es conocido [Madrid](ciudad)?
+    - contame que tiene de especial [Las Vegas](ciudad)
+    - Que lugares de interés ofrece [Londres](ciudad)?
+    - Cual es la atracción mas famosa de [París](ciudad)?
+    - Explicame las atracciones turísticas de [Sidney](ciudad).
+    - Que puedo visitar en [Dublin](ciudad)?
+    - Cuentame sobre las atracciones en [Lima](ciudad).
+    - Enséñame las atracciones de [Hong Kong](ciudad).
+    - ¿Qué sitios de interés hay en [San Francisco](ciudad)?
+    - ¿Por qué es famosa [Venecia](ciudad)?
+- intent: quiero hotel
+  examples: |
+    - mostrame los hoteles disponibles
+    - no se a que hotel ir, mostrame que opciones hay
+    - que opciones de hoteles tengo?
+    - Necesito encontrar un hotel
+    - Estoy buscando alojamiento
+    - Quiero reservar un hotel
+    - recomendame hoteles
+    - decime que hoteles hay
+    - Que hoteles están disponibles?
+    - cuales hoteles me recomendas?
+    - Cuales son las opciones de hospedaje?
+    - Dame información sobre hoteles
+- intent: donde hay
+  examples: |
+    - donde hay [playa](atraccion)?
+    - quiero ir a la [playa](atraccion)
+    - quiero visitar una [montaña](atraccion)
+    - a donde tengo que ir si quiero conocer una buena [playa](atraccion)
+    - que lugar tiene de la [ciudad](atraccion) mas bella?
+    - en que ciudad hay [montaña](atraccion)?
+    - quiero conocer las [montaña](atraccion), en que ciudad puedo encontrarlas?
+    - Donde hay una [playa](atraccion) impresionante?
+    - Estoy buscando información sobre [playa](atraccion) del mundo
+    - Recomendame lugares con [playa](atraccion) espectaculares
+    - Que ciudades tienen [playa](atraccion) para visitar?
+    - Quiero visitar una [montaña](atraccion) espectacular
+    - Donde puedo encontrar [montaña](atraccion) impresionantes?
+    - Recomiéndame lugares con [montaña](atraccion) espectaculares para explorar.
+    - Cual es la [montaña](atraccion) más alta de la región?
+    - Que ciudades están cerca de [montaña](atraccion)?
+    - Cuales son las principales [ciudad](atraccion)?
+- intent: consulta ciudades de un pais
+  examples: |
+    - Que ciudades puedo visitar en [Argentina](pais)
+    - mostrame todas las ciudades de [España](pais)
+    - Decime cuales son las ciudades de [Estados Unidos](pais) que puedo explorar.
+    - Mostrar todas las ciudades disponibles en [Mexico](pais).
+    - Cuales son las ciudades turísticas en [Francia](pais)?
+    - Que lugares puedo conocer en [Italia](pais)?
+    - Quiero saber las ciudades en [Alemania](pais) para viajar.
+    - Muestra las ciudades en [China](pais) que son populares.
+    - Dime todas las ciudades en [Canada](pais) que puedo visitar.
+    - Que destinos tengo en [Chile](pais)?
+    - que ciudades puedo visitar en [Argentina](pais)
+- intent: listar ciudades
+  examples: |
+    - dame todas las ciudades a las que puedo ir
+    - mostrame todas las ciudades
+    - Quiero ver la lista de todas las ciudades
+    - Mostrar opciones de destinos
+    - no se a donde ir
+    - Enseñame todas las ciudades disponibles
+    - Necesito conocer las ciudades que puedo visitar
+    - Listame los destinos posibles, por favor
+    - Que lugares puedo elegir como destino?
+    - Muestra las ciudades a las que puedo ir
+    - Necesito una lista de destinos turisticos
+    - mostrame la lista de ciudades a donde puedo ir
+    - aun no decido a donde ir, mostrame los destinos disponibles
+- intent: busco paquete
+  examples: |
+    - diagrama un paquete de viaje para mi
+    - deseo hallar un paquete para ir de viaje
+    - que paquete de viaje me recomendas
+    - reservar algun paquete de viaje
+    - decime un paquete con destinos a donde puedo viajar
+    - necesito viajar para despejarme, dame un buen paquete de viaje
+    - conseguime el mejor paquete de viaje
+    - que paquetes estan en promocion?
+    - Cual es tu sugerencia de un paquete de viaje?
+    - Necesito una escapada, ¿me puedes ofrecer un buen paquete de viaje?
+    - Tienes ofertas especiales en paquetes de viaje?
+    - ¿Puedes ayudarme a reservar un paquete de vacaciones?
+    - recomendame un paquete
+- intent: viaje
+  examples: |
+    - visitar lugares nuevos
+    - estoy interesado en irme de vacaciones
+    - me urge irme de viaje
+    - me gustaria estar de vacaciones
+    - irme de vacaciones
+    - me gustaria viajar
+    - estoy buscando un viaje
+    - estoy organizando un viaje familiar
+    - me encuentro buscando opciones de viaje
+    - Quiero explorar nuevos lugares
+    - Me gustaría planificar un viaje en el futuro
+    - Estoy emocionado por la idea de viajar
+    - Tengo ganas de aventurarme en un viaje
+    - quiero viajar pero no se a donde ir
+    - me gustaria visitar lugares nuevos
+- intent: intervalo dias
+  examples: |
+    - Quiero viajar el dia [20/08/2022]{"entity": "dates", "role": "inicio"} y volver el dia [21/09/2023]{"entity": "dates", "role": "fin"}
+    - Deseo partir el [15/04/2023]{"entity": "dates", "role": "inicio"} y regresar el [20/05/2023]{"entity": "dates", "role": "fin"}
+    - Planeo viajar el [03/02/2023]{"entity": "dates", "role": "inicio"} y volver el [09/03/2023]{"entity": "dates", "role": "fin"}
+    - Estoy pensando en irme el [25/07/2022]{"entity": "dates", "role": "inicio"} y regresar el [30/08/2022]{"entity": "dates", "role": "fin"}.
+    - Mi fecha de inicio es el [05/09/2023]{"entity": "dates", "role": "inicio"} y mi fecha de finalización es el [10/10/2023]{"entity": "dates", "role": "fin"}
+    - Deseo comenzar el [01/01/2024]{"entity": "dates", "role": "inicio"} y terminar el [10/02/2024]{"entity": "dates", "role": "fin"}
+    - Tengo planes de iniciar el [07/05/2023]{"entity": "dates", "role": "inicio"} y concluir el [15/06/2023]{"entity": "dates", "role": "fin"}
+    - Quiero salir el [14/09/2022]{"entity": "dates", "role": "inicio"} y regresar el [20/10/2022]{"entity": "dates", "role": "fin"}
+    - Estoy considerando partir el [02/11/2023]{"entity": "dates", "role": "inicio"} y regresar el [08/12/2023]{"entity": "dates", "role": "fin"}
+    - cambia la fecha a [10/08/2023]{"entity": "dates", "role": "inicio"}] hasta el [20/10/2023](dates), {"entity": "dates", "role": "fin"}
+    - quiero ir entre el [10/10/2023]{"entity": "dates", "role": "inicio"} y el [15/10/2023]{"entity": "dates", "role": "fin"}
+- intent: ciudades
+  examples: |
+    - Quiero buscar pasajes desde [Bariloche]{"entity": "city", "role": "departure"} hasta [Barcelona]{"entity": "city", "role": "destination"}
+    - Dame pasajes desde [Cancun]{"entity": "city", "role": "departure"} hasta [Lima]{"entity": "city", "role": "destination"}
+    - quiero viajar desde [Berlin]{"entity": "city", "role": "departure"} hasta [Las Vegas]{"entity": "city", "role": "destination"}
+    - Quiero ir desde [Londres]{"entity": "city", "role": "departure"} hasta [Singapur]{"entity": "city", "role": "destination"}
+    - mandame viajes desde [Londres]{"entity": "city", "role": "departure"} a [Singapur]{"entity": "city", "role": "destination"}
+    - mostrame viajes desde [Madrid]{"entity": "city", "role": "departure"} a [Miami]{"entity": "city", "role": "destination"}
+    - Busco opciones de viaje desde [Paris]{"entity": "city", "role": "departure"} hasta [Roma]{"entity": "city", "role": "destination"}
+    - ¿Tienen vuelos disponibles desde [Tokio]{"entity": "city", "role": "departure"} a [Los Angeles]{"entity": "city", "role": "destination"}?
+    - ¿Cuáles son las opciones de vuelo desde [Buenos Aires]{"entity": "city", "role": "departure"} hasta [Munich]{"entity": "city", "role": "destination"}?
+    - Quiero comprar boletos de avión desde [El Cairo]{"entity": "city", "role": "departure"} a [Lisboa]{"entity": "city", "role": "destination"}.
+    - Necesito encontrar un viaje desde [Toronto]{"entity": "city", "role": "departure"} hasta [Sydney]{"entity": "city", "role": "destination"}.
+    - quiero buscar un pasaje desde [Miami][{"entity": "ciudad"} hasta [Cancun][{"entity": "ciudad"}, {"entity": "city", "role": "departure"}]
+- intent: recomenda destino
+  examples: |
+    - a donde puedo ir?
+    - recomendame un destino
+    - cual crees que es un destino para mi
+    - decime que lugar me puede gustar
+    - ¿Puedes recomendarme un destino que coincida con mis intereses?
+    - Busco un lugar que se ajuste a mis preferencias, ¿alguna sugerencia?
+    - ¿Qué destino se adapta mejor a mis gustos?
+    - Quiero viajar a un lugar que sea perfecto para mis pasatiempos, ¿qué me recomiendas?
+    - ¿Cuál es un destino que cumpla con mis criterios?
+    - Necesito una recomendación de viaje basada en mis intereses
+- intent: gustoviaje
+  examples: |
+    - Me gustó mucho mi último viaje. La experiencia fue increíble y memorable.
+    - Disfruté mucho de mi reciente viaje. Fue una aventura inolvidable.
+    - Mi experiencia en mi último viaje fue maravillosa. Las personas y la cultura local hicieron que fuera especial.
+    - Tuve la oportunidad de viajar recientemente y lo pasé genial. Los lugares que visité eran asombrosos.
+    - Disfruté mucho de mi última escapada. Fue una experiencia única e inolvidable.
+    - Me encantó mi viaje más reciente. La combinación de tradición y modernidad fue fascinante.
+    - Excelente, me gusto mucho haber podido visitar esa ciudad
+    - Mi reciente viaje fue una experiencia increíble. La belleza natural y la historia de la región eran impresionantes.
+    - Explorar nuevos lugares es siempre emocionante. Mi último viaje fue una experiencia inolvidable.
+    - Me gustó mucho mi último viaje. La experiencia fue muy buena
+    - No puedo dejar de hablar de mi más reciente aventura. Fue una experiencia alucinante.
+    - Mi escapada de fin de semana fue realmente emocionante. Los paisajes y las actividades hicieron que me sintiera vivo.
+    - La experiencia de buceo durante mis vacaciones fue una maravilla. Fue un sueño hecho realidad.
+    - Pasé un tiempo maravilloso en mi último viaje. Las experiencias y los momentos que viví son inolvidables.
+    - Mi reciente aventura de viaje fue una experiencia única. Disfruté de cada momento.
+    - Explorar nuevos lugares siempre es emocionante. Mi última travesía fue verdaderamente especial.
+    - Mi escapada reciente fue asombrosa. Los paisajes y la gente hicieron que fuera inolvidable.
+    - La cultura y la historia de la región que visité durante mi último viaje me dejaron impresionado.
+
+- intent: nomegusto
+  examples: |
+    - No fue lo que esperaba. El clima y la comida no me gustaron.
+    - No disfruté mi visita, la ciudad era ruidosa y caótica.
+    - Mi experiencia no fue satisfactoria. Las playas estaban llenas de turistas y la comida era cara.
+    - No recomendaría mi viaje alli. El tráfico y las multitudes arruinaron la experiencia.
+    - No fue divertido. Perdí dinero en los casinos y no me gustó el ambiente.
+    - Mi viaje a la playa no estuvo tan chido. El clima estuvo malo y la comida era cara.
+    - El viaje a la montaña fue un fiasco. El clima frío y la lluvia arruinaron todo.
+    - No disfruté para nada mi visita a la ciudad. El tráfico era un caos y la gente estaba de mal humor.
+    - Mi experiencia en ese lugar fue un desastre. Los precios eran exorbitantes y el servicio pésimo.
+    - No recomendaría mi viaje a ese destino. Hubo demasiados turistas y la belleza natural estaba deteriorada.
+    - El paseo por la selva resultó ser una decepción. No vi animales y pasé más tiempo mojado que seco.
+    - No me agradó en lo absoluto mi visita a esa ciudad. Las calles estaban sucias y la arquitectura era fea.
+    - Mi último viaje no fue lo que esperaba. No disfruté mucho de la experiencia.
+    - Lamentablemente, mi reciente aventura de viaje no fue satisfactoria. No me gustó.
+    - No tuve una buena experiencia en ese parque de atracciones. Las filas eran interminables y las atracciones aburridas.
+    - No me gustó mi estancia en el hotel. La habitación era sucia y el personal poco amable.
+
+- intent: affirm
+  examples: |
+    - correct
+    - si
+    - s
+    - por supuesto
+    - eso suena bien
+    - correcto
+- intent: deny
+  examples: |
+    - no
+    - n
+    - nunca
+    - no lo creo
+    - de ningun modo
+    - ni loco
+    - ni en pedo
+    - antes muerto
+    - ni ahi
+    - no gracias
+    - no, te agradezco
+    - no, gracias
+    - nunca jamas en la vida
+    - no suena bien
+- intent: opcion
+  examples: |
+    - me gusta la opcion numero [1](opcion)
+    - quiero hacer la opcion [2](opcion)
+    - la mas [barata]{"entity": "opcion", "value": "2"}
+    - elijo la [primera]{"entity": "opcion", "value": "1"}
+    - me quedo con la [3](opcion)
+    - me gusta la [tercer]{"entity": "opcion", "value": "3"} opcion
+    - Prefiero la [opción 1]{"entity": "opcion", "value": "1"}.
+    - Deseo seleccionar la [alternativa 2]{"entity": "opcion", "value": "2"}.
+    - Voy por la alternativa [más asequible]{"entity": "opcion", "value": "2"}.
+    - Mi elección es la [primera]{"entity": "opcion", "value": "1"}.
+    - Me inclino por la [tercera]{"entity": "opcion", "value": "3"}.
+    - me gusta la opcion [1](opcion)
+    - me gusta la opcion [2](opcion)
+- intent: mood_great
+  examples: |
+    - bien
+    - perfecto
+    - como un rey
+    - la casa esta en orden
+    - todo bien
+    - todo correcto
+    - es un gran dia
+    - genial
+    - muy bien
+    - muy bien y vos?
+    - bien y tu?
+- intent: averigua mi nombre
+  examples: |
+    - cual es mi nombre?
+    - decime cual es mi nombre
+    - te apuesto a que no sabes mi nombre
+    - seguro no sabes mi nombre
+    - deci mi nombre
+    - jajajaja no sabes mi nombre seguro
+
+- intent: mood_unhappy
+  examples: |
+    - triste
+    - mal
+    - muy triste
+    - muy mal
+    - nunca me senti peor
+    - infeliz
+    - descompuesto
+    - enfermo
+    - decepcionado
+    - estoy muy decepcionado
+- intent: bot_challenge
+  examples: |
+    - estoy hablando con un bot?
+    - estoy hablando con un humano?
+    - tenes sentimientos?
+    - quien eres?
+- synonym: '2'
+  examples: |
+    - barata
+    - alternativa 2
+    - más asequible
+    - opcion 2
+    - la opcion 2
+    - mas barato
+    - segunda
+    - dos
+    - medio
+- synonym: '1'
+  examples: |
+    - primera
+    - la opcion 1
+    - opcion 1
+    - primer
+    - uno
+    - alternativa 1
+    - arriba
+    - mas temprano
+- synonym: '3'
+  examples: |
+    - tercera
+    - tercer
+    - opcion 3
+    - alternativa 3
+    - tres
+    - abajo
+    - mas caro
+- synonym: 'Orlando'
+  examples: |
+    - Disney
+    - parque de Disney
+    - conocer a Mickey
+    - Universal Studios
+    - Disney World
+- synonym: 'New York'
+  examples: |
+    - la gran manzana
+- synonym: 'Las Vegas'
+  examples: |
+    - la ciudad del pecado
+    - apostar 
+- synonym: 'Roma'
+  examples: |
+    - coliseo
+    - coliseo romano
+- regex: atraccion
+  examples: |
+    - (ciudad|playa|montaña)
+- lookup: pais
+  examples: |
+    - China
+    - Tailandia
+    - Inglaterra
+    - Singapur
+    - Francia
+    - Emiratos Arabes Unidos
+    - Estados Unidos
+    - Turquia
+    - Italia
+    - Japon
+    - España
+    - Paises Bajos
+    - Austria
+    - Alemania
+    - Sudafrica
+    - Irlanda
+    - Rusia
+    - Grecia
+    - Hungria
+    - Mexico
+    - Canada
+    - Republica Dominicana
+    - Australia
+    - Belgica
+    - Chile
+    - Qatar
+    - Portugal
+    - Egipto
+    - Polonia
+    - Peru
+    - Nueva Zelanda
+    - Emiratos Arabes Unidos
+    - Argentina
+- lookup: ciudad
+  examples: |
+    - HongKong
+    - Bangkok
+    - Londres
+    - Singapur
+    - Paris
+    - Dubai
+    - Nueva York
+    - Estambul
+    - Roma
+    - Tokio
+    - Miami
+    - Milan
+    - Las Vegas
+    - Barcelona
+    - Shanghai
+    - Amsterdam
+    - Viena
+    - Los Angeles
+    - Venecia
+    - Orlando
+    - Berlin
+    - Florencia
+    - Johannesburgo
+    - Madrid
+    - Dublin
+    - Moscu
+    - Beijing
+    - Atenas
+    - Budapest
+    - Cancun
+    - San Francisco
+    - Toronto
+    - Munich
+    - Punta Cana
+    - Sydney
+    - Bruselas
+    - Santiago
+    - Doha
+    - Lisboa
+    - El Cairo
+    - San Petersburgo
+    - Cracovia
+    - Lima
+    - Auckland
+    - Honolulu
+    - Ciudad de Mexico
+    - Vancouver
+    - Buenos Aires
+    - Melbourne
+    - Niza
+    - Bariloche
+    - Salta
+    - Jujuy
+    - Calafate
+    - Cataratas del Iguazu
+    - Ushuaia
+    - Necochea
+    - Frankfurt
+    - Washington DC
+    - Abu Dhabi

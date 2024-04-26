@@ -1,0 +1,204 @@
+version: '3.1'
+
+entities:
+- pais
+- atraccion
+- ciudad
+- dates:
+    roles:
+    - inicio
+    - fin
+- opcion
+- city:
+    roles:
+    - departure
+    - destination
+slots:
+  departure:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+      role: departure
+  destination:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+      role: destination
+  inicio:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: dates
+      role: inicio
+  fin:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: dates
+      role: fin
+  slot_pais:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: pais
+  slot_ciudad:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: ciudad
+  slot_atraccion:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: atraccion
+  name:
+    type: text
+    mappings:
+    - type: custom
+  name_value:
+    type: bool
+    initial_value: false
+    mappings:
+    - type: custom
+  country:
+    type: text
+    mappings:
+    - type: custom
+  opcion1:
+    type: text
+    mappings:
+    - type: custom
+  opcion2:
+    type: text
+    mappings:
+    - type: custom
+  opcion3:
+    type: text
+    mappings:
+    - type: custom
+  hayopcion:
+    type: bool
+    initial_value: false
+    mappings:
+    - type: custom
+  opcion:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: opcion
+  hotel1:
+    type: text
+    mappings:
+    - type: custom
+  hotel2:
+    type: text
+    mappings:
+    - type: custom
+  hotel3:
+    type: text
+    mappings:
+    - type: custom
+  paquete:
+    type: text
+    mappings:
+    - type: custom
+  gusta:
+    type: text
+    mappings:
+    - type: custom
+  recomendacion:
+    type: text
+    mappings:
+    - type: custom
+
+
+intents:
+- affirm
+- bot_challenge
+- busco paquete
+- ciudades
+- consulta ciudades de un pais
+- deny
+- donde hay
+- goodbye
+- greet
+- intervalo dias
+- listar ciudades
+- mood_great
+- mood_unhappy
+- opcion
+- que hay en la ciudad
+- quiero hotel
+- viaje
+- recomenda destino
+- nomegusto
+- gustoviaje
+
+responses:
+  utter_greet:
+  - text: Hola, como estas?
+    condition:
+      - type: slot
+        name: name_value
+        value: true
+  - text: "Hola, {name}. Que bueno verte por aqui! Como estas?"
+  - text: "Heeey, {name}. Como estas?"
+  - text: "Bienvenid@, {name}. que tal?"
+
+  utter_cheer_up:
+  - text: Aca tengo algo que te puede alegrar
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Te ayude?
+  utter_happy:
+  - text: ¡Genial, hoy te asistiré a buscar un viaje! A donde te gustaria ir?
+  - text: ¡Genial, hoy te asistiré a buscar un viaje! A donde queres ir?
+  - text: ¡Genial, hoy te voy a asustir a buscar un viaje!
+  utter_no_compro:
+  - text: Bien, no hay problema ¿se te ofrece algo mas?
+  utter_compro:
+  - text: Gracias por comprar con tu asistente Traveller bot, ¿se te ofrece algo mas?
+  utter_goodbye:
+  - text: Chau
+  - text: Nos vemos
+  - text: Hasta luego
+  - text: Espero vuelvas pronto
+  utter_fecha:
+  - text: Esto pinta bien! decime entre que fechas querés ir
+  - text: Perfecto, en que fecha queres ir y cuando pensas volver?
+  - text: Me gusta, me gusta... en que fechas queres planeado ir y volver?
+  utter_viaje:
+  - text: Excelente, decime... un origen y un destino y estaré encantado de buscarte un vuelo
+  utter_iamabot:
+  - text: Soy un bot creado por Mateo  powered by Rasa.
+
+actions:
+- utter_viaje
+- utter_happy
+- utter_greet
+- action_listar_ciudades
+- action_recomendar_paquetes
+- action_comprar_paquete
+- action_ciudades_de_pais
+- action_listar_hoteles
+- action_buscar_vuelo
+- action_elegir_opcion_hotel
+- action_elegir_opcion
+- utter_fecha
+- action_save_last_message
+- action_check_slots
+- action_atraccion_de_ciudad
+- action_atraccion_en
+- action_get_name
+- action_recomendar_destino
+- action_save_preferences
+- action_comprar_recomendacion
+- action_default_fallback
+- action_session_start
+- action_erase_slots
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

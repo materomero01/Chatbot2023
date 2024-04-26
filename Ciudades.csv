@@ -1,0 +1,16 @@
+Precio;Pais;Tiene;Gusta;Ciudad
+1930;Estados Unidos;Playa;True;Miami
+1580;Estados Unidos;Ciudad;True;Orlando
+2567;Estados Unidos;Ciudad;True;Las Vegas
+1234;Mexico;Ciudad;True;Cancun
+500;Argentina;Playa;True;Necochea
+50000;Estados Unidos;Ciudad;False;New York
+30000;Emiratos Arabes Unidos;Ciudad;False;Dubai
+8169;Grecia;ciudad;False;Atenas
+8169;Alemania;ciudad;False;Berlin
+8169;Italia;ciudad;False;Venecia
+3702.5;Estados Unidos;playa;True;Miami
+3702.5;Estados Unidos;ciudad;True;Orlando
+1168;Estados Unidos;playa;True;Miami
+1370;Italia;ciudad;True;Milan
+1251;Alemania;ciudad;True;Frankfurt
